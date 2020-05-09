@@ -1,0 +1,270 @@
+/* ===== resetting ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Monserrat';
+    src: url('../font/Monserrat/Montserrat-SemiBold.ttf') format('truetype'),
+        url('../font/Monserrat/Montserrat-Regular.ttf.ttf') format('truetype'),
+        url('../font/Monserrat/Montserrat-SemiBold.ttf') format('truetype'),
+        url('../font/Monserrat/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+:root {
+    --primary: #F4956A;
+    --blue: #7CD3F1;
+    --gray: #EFEFEF;
+    --dark-gray: #707070;
+    --dark-gray-2: #333333;
+}
+
+html {
+    font-family: 'Monserrat', sans-serif;
+    font: 15px/19px Montserrat;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 960px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* button */
+.btn {
+    border-radius: 5px;
+    padding: 16px 32px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    transition: background .3s;
+}
+
+.btn-primary:hover {
+    background: rgb(196, 101, 57);
+}
+
+/* background */
+.bg-blue {
+    background: var(--blue);
+    color: white;
+}
+
+.bg-gray {
+    background: var(--gray);
+    color: var(--dark-gray);
+}
+
+
+/* ====== styles ====== */
+
+/* header */
+header {
+    padding-top: 21px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 960px;
+    width: 90%;
+}
+
+/* banner */
+.banner h1 {
+    font: 50px/61px Montserrat;
+    font-weight: 600;
+    border-bottom: 8px;
+}
+
+.banner p {
+    font: 400 20px/24px Montserrat;
+    margin-bottom: 32px;
+    color: var(--dark-gray);
+}
+
+.banner img {
+    width: 247px;
+    height: 247px;
+}
+
+.banner img:hover {
+    animation: earthquake .3s infinite;
+}
+
+.banner .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.banner .banner-text {
+    width: 569px;
+}
+
+/* section */
+section {
+    padding: 70px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 72px;
+}
+
+.section-title span {
+    font-weight: 600;
+}
+
+.section-title h2 {
+    font: 40px/49px Montserrat;
+    font-weight: 600;
+}
+
+/* instruction section */
+.instruction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.instruction img {
+    width: 140px;
+    height: 140px;
+    margin-right: 74px;
+    transition: .3s;
+}
+
+.instruction img:hover {
+    animation: toLeftAndRotate 1s forwards;
+}
+
+.instruction:nth-child(odd) img {
+    order: 2;
+    margin: 0 0 0 74px;
+}
+
+.instruction:nth-child(odd) img:hover {
+    animation: toRightAndRotate 1s forwards;
+}
+
+.instruction p {
+    font: 20px/24px Montserrat;
+    font-weight: 600;
+    width: 300px
+}
+
+.instruction:nth-child(even) p {
+    text-align: right;
+}
+
+/* indication section */
+.indications {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.indication {
+    display: flex;
+    min-width: 330px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.indication:nth-child(odd) {
+    margin-right: 68px;
+}
+
+.indication img {
+    width: 140px;
+    height: 140px;
+    margin-left: 41px;
+}
+
+.indication p {
+    font: 25px/30px Montserrat;
+    font-weight: 600;
+    color: black;
+    width: 200px;
+}
+
+.indication:nth-child(odd) p {
+    text-align: right;
+}
+
+.indication img:hover {
+    animation: earthquake .3s infinite;
+}
+
+.indication:nth-child(even) img {
+    margin: 0 41px 0 0;
+    order: -1;
+}
+
+/* footer */
+footer {
+    padding: 64px 0;
+    background: var(--dark-gray-2);
+    text-align: center;
+}
+
+footer img {
+    width: 420px;
+    height: 55px;
+}
+
+/* ===== animation ====== */
+@keyframes earthquake {
+    0% {
+        transform: rotate(0);
+    }
+
+    20% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes toLeftAndRotate {
+    0% {
+        transform: translateX(0);
+    } 
+
+    20% {
+        transform: translateX(-30px);
+    }
+    
+    100% {
+        transform: translateX(-30px) rotate(30deg);
+    }
+}
+
+@keyframes toRightAndRotate {
+    0% {
+        transform: translateX(0);
+    } 
+
+    20% {
+        transform: translateX(30px);
+    }
+    
+    100% {
+        transform: translateX(30px) rotate(-30deg);
+    }
+}
